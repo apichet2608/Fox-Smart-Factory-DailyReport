@@ -1,0 +1,29 @@
+/* Breakpoint 1 */
+@media (max-width: 800px) {
+  .custom-container {
+    min-width: 100%;
+    padding-top: 60px;
+    background-color: white;
+  }
+}
+
+/* Breakpoint 2 */
+@media (min-width: 801px) and (max-width: 1366px) {
+  .custom-container {
+    min-width: 100%;
+    padding: 16px;
+    padding-top: 60px;
+    background-color: white;
+  }
+}
+
+/* Breakpoint 3 */
+/* @media (min-width: 1367px) and (max-width: 1920px) { */
+@media (min-width: 1367px) {
+  .custom-container {
+    min-width: 100%;
+    padding: 32px;
+    padding-top: 60px;
+    background-color: white;
+  }
+}

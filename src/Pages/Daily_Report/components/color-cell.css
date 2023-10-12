@@ -1,0 +1,23 @@
+.header-color {
+  text-align: center;
+}
+
+.cell-color-green {
+  background-color: #d5f5e3;
+  color: black;
+}
+
+.cell-color-yellow {
+  background-color: #f7dc6f;
+  color: black;
+}
+
+.cell-color-orange {
+  background-color: #f5b041;
+  color: black;
+}
+
+.cell-color-red {
+  background-color: #fadbd8;
+  color: black;
+}

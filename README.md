@@ -1,0 +1,2 @@
+# Fox-Smart-Factory-DailyReport
+ 
