@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./Css/ContainerMain.css";
 import DailyReport from "./Pages/Daily_Report/daily_report";
 import DailyReportByLot from "./Pages/Page_Daily_Report_bylot/Daily_Report_bylot";
+import HoldingTimeSummary from "./Pages/Page-Holding-time-summary/Holding-time";
 
 const drawerWidth = 240;
 
@@ -59,6 +60,14 @@ export default function PersistentDrawerLeft() {
                   element={
                     <>
                       <DailyReportByLot />
+                    </>
+                  }
+                />
+                <Route
+                  path="/holding-time-summary"
+                  element={
+                    <>
+                      <HoldingTimeSummary />
                     </>
                   }
                 />

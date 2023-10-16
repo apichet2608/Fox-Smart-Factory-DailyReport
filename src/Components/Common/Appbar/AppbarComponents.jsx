@@ -105,6 +105,8 @@ export default function MiniDrawer() {
           return "Daily Report";
         case "/daily-report-bylot":
           return "Data Completeness";
+        case "/holding-time-summary":
+          return "Holding Time";
         default:
           return "";
       }
@@ -165,6 +167,10 @@ export default function MiniDrawer() {
             {
               text: "Data Completeness",
               path: "/daily-report-bylot",
+            },
+            {
+              text: "Holding Time",
+              path: "/holding-time-summary",
             },
           ].map((item, index) => (
             <ListItem key={item.text} disablePadding sx={{ display: "block" }}>
