@@ -1,5 +1,8 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from "@mui/material/styles";
+
+import { format, subDays } from "date-fns";
+import { formatdatewithtime } from "../../utils/formatdate";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Grid from "@mui/material/Unstable_Grid2";
@@ -38,6 +41,88 @@ export default function HoldingTimeSummary() {
     },
   });
 
+  const [distinctselect_product, setdistinctselect_product] = useState([]);
+  const [product, setproduct] = useState({ product_name: "ALL" });
+
+  const [distinctselect_station, setdistinctselect_station] = useState([]);
+  const [station, setstation] = useState({
+    sendresultdetails_station_type: "ALL",
+  });
+
+  const [DataTableAPI, setDataTableAPI] = useState([]);
+
+  // #####################################################################  DATE Start-Stop ###############################################################################
+  const currentDate = new Date().toISOString().slice(0, 10);
+  const [yesterday, setYesterdayText] = useState("");
+  useEffect(() => {
+    const today = new Date();
+    const yesterday = new Date(today);
+    yesterday.setDate(today.getDate() - 1);
+    const formattedYesterday = yesterday.toISOString().split("T")[0];
+    setYesterdayText(formattedYesterday);
+  }, []);
+  const [startDate, setStartDate] = useState(
+    format(subDays(new Date(), 1), "yyyy-MM-dd")
+  );
+  const [stopDate, setStopDate] = useState(format(new Date(), "yyyy-MM-dd"));
+  // #####################################################################  FETCHING API ###############################################################################
+
+  const fetchdistinctproduct = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_IP_API}${
+          import.meta.env.VITE_Table_foxsystem_daily_report_bylot
+        }/distinct_station?startdate=${startDate}&stopdate=${stopDate}`
+      );
+      const jsonData = await response.json();
+      console.log(jsonData);
+      setdistinctselect_station(jsonData);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  const fetchdistinctproduct = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_IP_API}${
+          import.meta.env.VITE_foxsystem_summary_holdingtime
+        }/distinct_product?test_station=${
+          test_station.test_station
+        }&startdate=${startDate}&stopdate=${stopDate}`
+      );
+      const jsonData = await response.json();
+
+      setdistinctselect_product(jsonData);
+      console.log(jsonData);
+      console.log("select-product");
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  // #####################################################################  HANDLE #####################################################################################
+  const handleStopDateChange = (event) => {
+    const newStopDate = event.target.value;
+    const stopDate = new Date(newStopDate);
+
+    // แปลงเป็น timestamp ตามรูปแบบที่ต้องการ
+    const stopDateTimestamp = format(stopDate, "yyyy-MM-dd");
+
+    setStopDate(stopDateTimestamp);
+    console.log(stopDateTimestamp);
+  };
+  const handleStartDateChange = (event) => {
+    const newStartDate = event.target.value;
+    const startDate = new Date(newStartDate);
+
+    // แปลงเป็น timestamp ตามรูปแบบที่ต้องการ
+    const startDateTimestamp = format(startDate, "yyyy-MM-dd");
+
+    setStartDate(startDateTimestamp);
+    console.log(startDateTimestamp);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       {/* <Main open={open}> */}
@@ -52,8 +137,8 @@ export default function HoldingTimeSummary() {
               id="start-date"
               label="Start Date"
               type="date"
-              //   value={startDate}
-              //   onChange={handleStartDateChange}
+              value={startDate}
+              onChange={handleStartDateChange}
               sx={{ width: "100%" }}
               InputLabelProps={{
                 shrink: true,
@@ -68,8 +153,8 @@ export default function HoldingTimeSummary() {
               id="stop-date"
               label="Stop Date"
               type="date"
-              //   value={stopDate}
-              //   onChange={handleStopDateChange}
+              value={stopDate}
+              onChange={handleStopDateChange}
               sx={{ width: "100%" }}
               InputLabelProps={{
                 shrink: true,
