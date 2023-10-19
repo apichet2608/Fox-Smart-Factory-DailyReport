@@ -63,14 +63,6 @@ export default function PersistentDrawerLeft() {
                     </>
                   }
                 />
-                <Route
-                  path="/holding-time-summary"
-                  element={
-                    <>
-                      <HoldingTimeSummary />
-                    </>
-                  }
-                />
               </Routes>
             </>
           </Container>
