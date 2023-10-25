@@ -18,10 +18,12 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Button from "@mui/material/Button";
 import On from "../../../../public/Icons/icons8-toggle-on-100.png";
 import Off from "../../../../public/Icons/icons8-toggle-Off-100.png";
+import TextLocation from "./location";
+import Fuji from "../../../../public/Fuji.png";
 
 const drawerWidth = 240;
 
@@ -93,28 +95,7 @@ const Drawer = styled(MuiDrawer, {
 export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const location = useLocation();
-  const [pageTitle, setPageTitle] = useState("");
 
-  useEffect(() => {
-    const getPageTitle = () => {
-      switch (location.pathname) {
-        case "/":
-          return "Daily Report";
-        case "/daily-report":
-          return "Daily Report";
-        case "/daily-report-bylot":
-          return "Data Completeness";
-        case "/holding-time-summary":
-          return "Holding Time";
-        default:
-          return "";
-      }
-    };
-
-    const title = getPageTitle();
-    setPageTitle(title);
-  }, [location.pathname]);
   // }, []);
 
   const handleDrawerOpen = () => {
@@ -142,13 +123,19 @@ export default function MiniDrawer() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            {pageTitle}
-          </Typography>
+          <TextLocation />
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
+          <img
+            src={Fuji}
+            alt="คำอธิบายภาพ"
+            style={{
+              width: 180, // กำหนดความกว้างของภาพให้เต็มขนาดของพื้นที่ที่รองรับ
+              height: 45, // กำหนดความสูงของภาพให้ปรับแต่งตามอัตราส่วนต้นฉบับ
+            }}
+          />
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />
@@ -160,6 +147,26 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           {[
+            {
+              text: "Proces-Output",
+              path: "/proces-output",
+            },
+            {
+              text: "Yield-and-Defect",
+              path: "/yield-and-defect",
+            },
+            // {
+            //   text: "Defect-Sending",
+            //   path: "/defect-sending",
+            // },
+            {
+              text: "Posting",
+              path: "/posting",
+            },
+            {
+              text: "Output summary",
+              path: "/output-summary",
+            },
             {
               text: "Daily Report",
               path: "/daily-report",

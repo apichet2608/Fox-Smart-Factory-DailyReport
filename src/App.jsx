@@ -11,8 +11,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./Css/ContainerMain.css";
 import DailyReport from "./Pages/Daily_Report/daily_report";
 import DailyReportByLot from "./Pages/Page_Daily_Report_bylot/Daily_Report_bylot";
-import HoldingTimeSummary from "./Pages/Page-Holding-time-summary/Holding-time";
-
+// import HoldingTimeSummary from "./Pages/Page-Holding-time-summary/Holding-time";
+import Page1 from "./Pages/page-proces-output/Page1";
+import Page2 from "./Pages/Page-yield-and-defect/Page2";
+import Page4 from "./Pages/Page-defect-sending/Page4";
+import Page5 from "./Pages/Page-posting/Page5";
+import Page6 from "./Pages/Page-output-summary/Page6";
 const drawerWidth = 240;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
@@ -63,6 +67,11 @@ export default function PersistentDrawerLeft() {
                     </>
                   }
                 />
+                <Route path="/proces-output" element={<Page1 />} />
+                <Route path="/yield-and-defect" element={<Page2 />} />
+                {/* <Route path="/defect-sending" element={<Page4 />} /> */}
+                <Route path="/posting" element={<Page5 />} />
+                <Route path="/output-summary" element={<Page6 />} />
               </Routes>
             </>
           </Container>
