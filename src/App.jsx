@@ -17,6 +17,8 @@ import Page2 from "./Pages/Page-yield-and-defect/Page2";
 import Page4 from "./Pages/Page-defect-sending/Page4";
 import Page5 from "./Pages/Page-posting/Page5";
 import Page6 from "./Pages/Page-output-summary/Page6";
+import Holding_track from "./Pages/Page-Holdingtime-track/Holding_time_track";
+
 const drawerWidth = 240;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
@@ -67,6 +69,7 @@ export default function PersistentDrawerLeft() {
                     </>
                   }
                 />
+                <Route path="/holding-time-track" element={<Holding_track />} />
                 <Route path="/proces-output" element={<Page1 />} />
                 <Route path="/yield-and-defect" element={<Page2 />} />
                 {/* <Route path="/defect-sending" element={<Page4 />} /> */}

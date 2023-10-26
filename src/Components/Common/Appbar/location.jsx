@@ -25,8 +25,8 @@ export default function MiniDrawer() {
           return "Daily Report";
         case "/daily-report-bylot":
           return "Data Completeness";
-        case "/holding-time-summary":
-          return "Holding Time";
+        case "/holding-time-track":
+          return "Holding Time Track";
         default:
           return "";
       }

@@ -175,6 +175,10 @@ export default function MiniDrawer() {
               text: "Data Completeness",
               path: "/daily-report-bylot",
             },
+            {
+              text: "Holding Time Track",
+              path: "/holding-time-track",
+            },
             // {
             //   text: "Holding Time",
             //   path: "/holding-time-summary",
