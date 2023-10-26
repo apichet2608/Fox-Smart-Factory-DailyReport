@@ -364,9 +364,18 @@ export default function Holding_track() {
                   renderInput={(params) => (
                     <div>
                       {isProductLoad ? (
-                        <Box sx={{ mt: 1 }}>
-                          Loading..
-                          <LinearProgress color="inherit" />
+                        <Box
+                          sx={{
+                            mt: 1,
+                            ml: 1,
+
+                            display: "flex",
+                            justifyContent: "flex-start",
+                            alignItems: "center",
+                          }}
+                        >
+                          <CircularProgress size="25px" />
+                          &nbsp; &nbsp; Loading...
                         </Box>
                       ) : (
                         <TextField {...params} label="Product" />
@@ -393,9 +402,18 @@ export default function Holding_track() {
                   renderInput={(params) => (
                     <div>
                       {isLotLoad ? (
-                        <Box sx={{ mt: 1 }}>
-                          Loading..
-                          <LinearProgress color="inherit" />
+                        <Box
+                          sx={{
+                            mt: 1,
+                            ml: 1,
+
+                            display: "flex",
+                            justifyContent: "flex-start",
+                            alignItems: "center",
+                          }}
+                        >
+                          <CircularProgress size="25px" />
+                          &nbsp; &nbsp; Loading...
                         </Box>
                       ) : (
                         <TextField {...params} label="Lot No." />
@@ -423,9 +441,18 @@ export default function Holding_track() {
                   renderInput={(params) => (
                     <div>
                       {isLotLoad ? (
-                        <Box sx={{ mt: 1 }}>
-                          Loading..
-                          <LinearProgress color="inherit" />
+                        <Box
+                          sx={{
+                            mt: 1,
+                            ml: 1,
+
+                            display: "flex",
+                            justifyContent: "flex-start",
+                            alignItems: "center",
+                          }}
+                        >
+                          <CircularProgress size="25px" />
+                          &nbsp; &nbsp; Loading...
                         </Box>
                       ) : (
                         <TextField {...params} label="Packing Group" />

@@ -24,6 +24,14 @@ import On from "../../../../public/Icons/icons8-toggle-on-100.png";
 import Off from "../../../../public/Icons/icons8-toggle-Off-100.png";
 import TextLocation from "./location";
 import Fuji from "../../../../public/Fuji.png";
+import output from "../../../../public/Icons/output.png";
+import defect from "../../../../public/Icons/checklist.png";
+import a1 from "../../../../public/Icons/a1.png";
+import statistics from "../../../../public/Icons/statistics.png";
+import p1 from "../../../../public/Icons/p1.png";
+import ana from "../../../../public/Icons/analyse.png";
+import hledongtime from "../../../../public/Icons/on-time.png";
+import ontime from "../../../../public/Icons/on-time.png";
 
 const drawerWidth = 240;
 
@@ -145,7 +153,7 @@ export default function MiniDrawer() {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List>
+        {/* <List>
           {[
             {
               text: "Proces-Output",
@@ -198,9 +206,7 @@ export default function MiniDrawer() {
                       minHeight: 48,
                       justifyContent: open ? "initial" : "center",
                       px: 2.5,
-                      backgroundColor: isActive
-                        ? "rgba(33, 150, 243, 0.5)"
-                        : "rgba(66, 66, 66, 0.5)",
+                      backgroundColor: isActive ? "#BDC3C7 " : "#E5E7E9",
                     }}
                   >
                     <ListItemIcon
@@ -221,6 +227,221 @@ export default function MiniDrawer() {
               </NavLink>
             </ListItem>
           ))}
+        </List> */}
+        <List>
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <NavLink to="/proces-output" style={{ textDecoration: "none" }}>
+              {({ isActive }) => (
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                    backgroundColor: isActive ? "#E5E7E9 " : "##BDC3C7",
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img src={output} alt="Page 1" width={24} height={24} />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Proces-Output"
+                    sx={{ opacity: open ? 1 : 0, color: "black" }}
+                  />
+                </ListItemButton>
+              )}
+            </NavLink>
+          </ListItem>
+
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <NavLink to="/yield-and-defect" style={{ textDecoration: "none" }}>
+              {({ isActive }) => (
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                    backgroundColor: isActive ? "#E5E7E9 " : "##BDC3C7",
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img src={defect} alt="Page 1" width={24} height={24} />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Yield and Defect"
+                    sx={{ opacity: open ? 1 : 0, color: "black" }}
+                  />
+                </ListItemButton>
+              )}
+            </NavLink>
+          </ListItem>
+
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <NavLink to="/posting" style={{ textDecoration: "none" }}>
+              {({ isActive }) => (
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                    backgroundColor: isActive ? "#E5E7E9 " : "##BDC3C7",
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img src={p1} alt="Page 1" width={24} height={24} />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Posting"
+                    sx={{ opacity: open ? 1 : 0, color: "black" }}
+                  />
+                </ListItemButton>
+              )}
+            </NavLink>
+          </ListItem>
+
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <NavLink to="/output-summary" style={{ textDecoration: "none" }}>
+              {({ isActive }) => (
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                    backgroundColor: isActive ? "#E5E7E9 " : "##BDC3C7",
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img src={ana} alt="Page 1" width={24} height={24} />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Output Summary"
+                    sx={{ opacity: open ? 1 : 0, color: "black" }}
+                  />
+                </ListItemButton>
+              )}
+            </NavLink>
+          </ListItem>
+
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <NavLink to="/daily-report" style={{ textDecoration: "none" }}>
+              {({ isActive }) => (
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                    backgroundColor: isActive ? "#E5E7E9 " : "##BDC3C7",
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img src={statistics} alt="Page 1" width={24} height={24} />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Daily Report"
+                    sx={{ opacity: open ? 1 : 0, color: "black" }}
+                  />
+                </ListItemButton>
+              )}
+            </NavLink>
+          </ListItem>
+
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <NavLink
+              to="/daily-report-bylot"
+              style={{ textDecoration: "none" }}
+            >
+              {({ isActive }) => (
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                    backgroundColor: isActive ? "#E5E7E9 " : "##BDC3C7",
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img src={a1} alt="Page 1" width={24} height={24} />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Data Completeness"
+                    sx={{ opacity: open ? 1 : 0, color: "black" }}
+                  />
+                </ListItemButton>
+              )}
+            </NavLink>
+          </ListItem>
+
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <NavLink
+              to="/holding-time-track"
+              style={{ textDecoration: "none" }}
+            >
+              {({ isActive }) => (
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                    backgroundColor: isActive ? "#E5E7E9 " : "##BDC3C7",
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img
+                      src={ontime}
+                      alt="Holding time track"
+                      width={24}
+                      height={24}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Holdoing Time Track"
+                    sx={{ opacity: open ? 1 : 0, color: "black" }}
+                  />
+                </ListItemButton>
+              )}
+            </NavLink>
+          </ListItem>
         </List>
         <Divider />
       </Drawer>

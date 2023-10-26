@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import ErrorIcon from "@mui/icons-material/Error";
 
 export default function TrackTable({ datafromAPI_track }) {
   const [DataTableAPI_track, setDataTableAPI_track] = useState([]);
@@ -40,10 +43,10 @@ export default function TrackTable({ datafromAPI_track }) {
     {
       field: "unit_serial_number",
       headerName: "Unit Serial Number",
-      width: 170,
+      width: 200,
     },
-    { field: "lot_no", headerName: "Lot No", width: 100 },
-    { field: "product_name", headerName: "Product", width: 140 },
+    { field: "lot_no", headerName: "Lot No", width: 120 },
+    { field: "product_name", headerName: "Product", width: 150 },
     {
       field: "pre_bake_in_time",
       headerName: "pre_bake_in_time",
@@ -89,9 +92,14 @@ export default function TrackTable({ datafromAPI_track }) {
       headerName: "Pack Create Time",
       width: 185,
       renderCell: (params) => {
-        return formatdatewithtime(params.row.pack_create_time);
+        if (params.row.pack_create_time != null) {
+          return formatdatewithtime(params.row.pack_create_time);
+        }
+
+        return "";
       },
     },
+
     {
       field: "update_date",
       headerName: "Update_date",
@@ -103,14 +111,137 @@ export default function TrackTable({ datafromAPI_track }) {
     {
       field: "spi_time",
       headerName: "SPI Time",
-      width: 185,
+      width: 200,
       renderCell: (params) => {
         return formatdatewithtime(params.row.spi_time);
       },
     },
-    { field: "test_27_check", headerName: "Test_27", width: 100 },
-    { field: "test_39_check", headerName: "Test_39", width: 100 },
-    { field: "test_74_check", headerName: "Test_74", width: 100 },
+    {
+      field: "test_27_check",
+      headerName: "Test_27",
+      width: 80,
+      renderCell: (params) => {
+        let icon;
+        let iconStyle = {
+          width: "16px",
+          height: "16px",
+          display: "block",
+          margin: "0 auto",
+        };
+
+        if (params.value === false) {
+          icon = (
+            <ErrorIcon
+              style={{
+                color: "#EC7063",
+                ...iconStyle,
+              }}
+            />
+          );
+        } else if (params.value === true) {
+          icon = (
+            <CheckCircleIcon
+              style={{
+                color: "#52BE80",
+                ...iconStyle,
+              }}
+            />
+          );
+        } else if (params.value === null) {
+          icon = (
+            <RemoveCircleIcon
+              style={{
+                color: "#CCD1D1",
+                ...iconStyle,
+              }}
+            />
+          );
+        }
+
+        return <div style={{ textAlign: "center" }}>{icon}</div>;
+      },
+    },
+
+    {
+      field: "test_39_check",
+      headerName: "Test_39",
+      width: 80,
+      renderCell: (params) => {
+        if (params.value === false) {
+          return (
+            <ErrorIcon
+              style={{
+                color: "#EC7063",
+                width: "16px",
+                height: "16px",
+              }}
+            />
+          );
+        } else if (params.value === true) {
+          return (
+            <CheckCircleIcon
+              style={{
+                color: "#52BE80",
+                width: "16px",
+                height: "16px",
+              }}
+            />
+          );
+        } else if (params.value === null) {
+          return (
+            <RemoveCircleIcon
+              style={{
+                color: "#CCD1D1",
+                width: "16px",
+                height: "16px",
+              }}
+            />
+          );
+        }
+
+        return null;
+      },
+    },
+    {
+      field: "test_74_check",
+      headerName: "Test_74",
+      width: 80,
+      renderCell: (params) => {
+        if (params.value === false) {
+          return (
+            <ErrorIcon
+              style={{
+                color: "#EC7063",
+                width: "16px",
+                height: "16px",
+              }}
+            />
+          );
+        } else if (params.value === true) {
+          return (
+            <CheckCircleIcon
+              style={{
+                color: "#52BE80",
+                width: "16px",
+                height: "16px",
+              }}
+            />
+          );
+        } else if (params.value === null) {
+          return (
+            <RemoveCircleIcon
+              style={{
+                color: "#CCD1D1",
+                width: "16px",
+                height: "16px",
+              }}
+            />
+          );
+        }
+
+        return null;
+      },
+    },
     {
       field: "pause_time_before_plsma",
       headerName: "Pause time Before",
