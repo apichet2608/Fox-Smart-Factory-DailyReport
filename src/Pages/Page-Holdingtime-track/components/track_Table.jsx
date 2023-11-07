@@ -4,6 +4,7 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ErrorIcon from "@mui/icons-material/Error";
+import { formatdatewithtime } from "../../../utils/formatdate";
 
 export default function TrackTable({ datafromAPI_track }) {
   const [DataTableAPI_track, setDataTableAPI_track] = useState([]);
@@ -18,18 +19,18 @@ export default function TrackTable({ datafromAPI_track }) {
     }
   }, [datafromAPI_track]);
 
-  function formatdatewithtime(date) {
-    const options = {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    };
-    const formattedDate = new Date(date).toLocaleString(undefined, options);
-    return formattedDate;
-  }
+  // function formatdatewithtime(date) {
+  //   const options = {
+  //     year: "numeric",
+  //     month: "2-digit",
+  //     day: "2-digit",
+  //     hour: "2-digit",
+  //     minute: "2-digit",
+  //     second: "2-digit",
+  //   };
+  //   const formattedDate = new Date(date).toLocaleString(undefined, options);
+  //   return formattedDate;
+  // }
 
   const columns = [
     {

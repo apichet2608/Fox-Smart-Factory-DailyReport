@@ -179,6 +179,7 @@ export default function DailyReportByLot() {
     setStartDate(startDateTimestamp);
     console.log(startDateTimestamp);
   };
+
   const handleStopDateChange = (event) => {
     const newStopDate = event.target.value;
     const stopDate = new Date(newStopDate);
