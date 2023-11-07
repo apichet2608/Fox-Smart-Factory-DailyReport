@@ -18,6 +18,10 @@ import Page4 from "./Pages/Page-defect-sending/Page4";
 import Page5 from "./Pages/Page-posting/Page5";
 import Page6 from "./Pages/Page-output-summary/Page6";
 import Holding_track from "./Pages/Page-Holdingtime-track/Holding_time_track";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 const drawerWidth = 240;
 
