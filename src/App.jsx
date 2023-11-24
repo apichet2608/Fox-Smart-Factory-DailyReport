@@ -76,7 +76,7 @@ export default function PersistentDrawerLeft() {
                 <Route path="/holding-time-track" element={<Holding_track />} />
                 <Route path="/proces-output" element={<Page1 />} />
                 <Route path="/yield-and-defect" element={<Page2 />} />
-                {/* <Route path="/defect-sending" element={<Page4 />} /> */}
+                <Route path="/defect-sending" element={<Page4 />} />
                 <Route path="/posting" element={<Page5 />} />
                 <Route path="/output-summary" element={<Page6 />} />
               </Routes>

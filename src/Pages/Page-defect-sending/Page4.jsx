@@ -37,6 +37,7 @@ import ContentPaste from "@mui/icons-material/ContentPaste";
 import Cloud from "@mui/icons-material/Cloud";
 import ArrowRightTwoToneIcon from "@mui/icons-material/ArrowRightTwoTone";
 import TodayIcon from "@mui/icons-material/Today";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const SummaryKpiCard = ({ data, title }) => {
   const sortedData = data.sort((a, b) => b.count - a.count);
@@ -260,37 +261,22 @@ const QuantitySelect = () => {
 
   const [maxWidth, setMaxWidth] = useState("xl");
 
-  React.useEffect(() => {
-    const handleResize = () => {
-      // ทำการตรวจสอบขนาดหน้าจอและกำหนด maxWidth ที่เหมาะสม
-      const screenWidth = window.innerWidth;
-      console.log(screenWidth);
-      if (screenWidth < 600) {
-        setMaxWidth("xl");
-      } else if (screenWidth < 960) {
-        setMaxWidth("sm");
-      } else if (screenWidth < 1280) {
-        setMaxWidth("md");
-      } else if (screenWidth < 1920) {
-        setMaxWidth("lg");
-      } else {
-        setMaxWidth("xl");
-      }
-    };
-
-    // เพิ่ม event listener เมื่อขนาดหน้าจอเปลี่ยนแปลง
-    window.addEventListener("resize", handleResize);
-
-    // คำสั่งที่ใช้เมื่อคอมโพเนนต์ถูก unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0, // breakpoint xs
+        sm: 600, // breakpoint sm
+        md: 960, // breakpoint md
+        lg: 1280, // breakpoint lg
+        xl: 1900, // breakpoint xl
+      },
+    },
+  });
 
   return (
-    <React.Fragment>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container maxWidth={maxWidth}>
+      <Container maxWidth={"xl"}>
         <Box maxWidth="xl" sx={{ height: "100%", width: "100%" }}>
           <Grid container spacing={2}>
             <Grid item xl={2.5} lg={2.5} md={2.5}>
@@ -362,7 +348,7 @@ const QuantitySelect = () => {
           </Grid>
         </Box>
       </Container>
-    </React.Fragment>
+    </ThemeProvider>
   );
 };
 

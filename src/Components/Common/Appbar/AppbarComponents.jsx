@@ -442,6 +442,34 @@ export default function MiniDrawer() {
               )}
             </NavLink>
           </ListItem>
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <NavLink to="/defect-sending" style={{ textDecoration: "none" }}>
+              {({ isActive }) => (
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                    backgroundColor: isActive ? "#E5E7E9 " : "##BDC3C7",
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img src={output} alt="Page 1" width={24} height={24} />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Defect-Sending"
+                    sx={{ opacity: open ? 1 : 0, color: "black" }}
+                  />
+                </ListItemButton>
+              )}
+            </NavLink>
+          </ListItem>
         </List>
         <Divider />
       </Drawer>

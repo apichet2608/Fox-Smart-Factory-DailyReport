@@ -15,8 +15,8 @@ export default function MiniDrawer() {
           return "Proces-Output";
         case "/yield-and-defect":
           return "Yield-and-Defect";
-        // case "/defect-sending":
-        //   return "Defect-Sending";
+        case "/defect-sending":
+          return "Defect-Sending";
         case "/posting":
           return "Posting";
         case "/output-summary":
