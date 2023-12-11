@@ -365,7 +365,7 @@ export default function DailyReport() {
       {/* <Container className="custom-container"> */}
       <Grid container spacing={2}>
         <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
-          <Item>
+          <Item sx={{ borderRadius: 3 }}>
             <TextField
               size="small"
               id="start-date"
@@ -381,7 +381,7 @@ export default function DailyReport() {
           </Item>
         </Grid>
         <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
-          <Item>
+          <Item sx={{ borderRadius: 3 }}>
             <TextField
               size="small"
               id="stop-date"
@@ -397,7 +397,7 @@ export default function DailyReport() {
           </Item>
         </Grid>
         <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
-          <Item>
+          <Item sx={{ borderRadius: 3 }}>
             <Autocomplete
               size="small"
               options={distinctselect_station}
@@ -416,7 +416,7 @@ export default function DailyReport() {
           </Item>
         </Grid>
         <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
-          <Item>
+          <Item sx={{ borderRadius: 3 }}>
             <Autocomplete
               size="small"
               options={distinctselect_product}
@@ -451,7 +451,7 @@ export default function DailyReport() {
         </Grid>
         {/* <Grid item xs={12} sm={12} md={8} lg={8} xl={8}></Grid> */}
         <Grid item xs={8} sm={8} md={8} lg={8} xl={8}>
-          <Item>
+          <Item sx={{ borderRadius: 3 }}>
             <Box sx={{ height: 800, width: "100%" }}>
               <DataGrid
                 rows={DataTableAPI}

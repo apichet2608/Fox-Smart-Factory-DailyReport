@@ -315,7 +315,7 @@ export default function Holding_track() {
               )}
             </Grid> */}
             <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
-              <Item>
+              <Item sx={{ borderRadius: 3 }}>
                 <TextField
                   size="small"
                   id="start-date"
@@ -331,7 +331,7 @@ export default function Holding_track() {
               </Item>
             </Grid>
             <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
-              <Item>
+              <Item sx={{ borderRadius: 3 }}>
                 <TextField
                   size="small"
                   id="stop-date"
@@ -347,7 +347,7 @@ export default function Holding_track() {
               </Item>
             </Grid>
             <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
-              <Item sx={{ height: 55 }}>
+              <Item sx={{ height: 55, borderRadius: 3 }}>
                 <Autocomplete
                   size="small"
                   disablePortal
@@ -387,7 +387,7 @@ export default function Holding_track() {
             </Grid>
 
             <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
-              <Item sx={{ height: 55 }}>
+              <Item sx={{ height: 55, borderRadius: 3 }}>
                 <Autocomplete
                   size="small"
                   disablePortal
@@ -424,7 +424,7 @@ export default function Holding_track() {
               </Item>
             </Grid>
             <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
-              <Item sx={{ height: 55 }}>
+              <Item sx={{ height: 55, borderRadius: 3 }}>
                 <Autocomplete
                   size="small"
                   disablePortal
@@ -470,7 +470,7 @@ export default function Holding_track() {
                   <LoadingPage />
                 </div>
               ) : DataAPItable && DataAPItable.length > 0 ? (
-                <Item>
+                <Item sx={{ borderRadius: 3 }}>
                   <TrackTable datafromAPI_track={DataAPItable} />
                 </Item>
               ) : (

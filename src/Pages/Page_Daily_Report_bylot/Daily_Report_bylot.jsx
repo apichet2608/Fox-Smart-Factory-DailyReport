@@ -405,7 +405,7 @@ export default function DailyReportByLot() {
       {/* <Container className="custom-container"> */}
       <Grid container spacing={2} direction="row">
         <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
-          <Item>
+          <Item sx={{ borderRadius: 3 }}>
             <TextField
               size="small"
               id="start-date"
@@ -421,7 +421,7 @@ export default function DailyReportByLot() {
           </Item>
         </Grid>
         <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
-          <Item>
+          <Item sx={{ borderRadius: 3 }}>
             <TextField
               size="small"
               id="stop-date"
@@ -437,7 +437,7 @@ export default function DailyReportByLot() {
           </Item>
         </Grid>
         <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
-          <Item>
+          <Item sx={{ borderRadius: 3 }}>
             <Autocomplete
               size="small"
               options={distinctselect_station}
@@ -456,7 +456,7 @@ export default function DailyReportByLot() {
           </Item>
         </Grid>
         <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
-          <Item>
+          <Item sx={{ borderRadius: 3 }}>
             <Autocomplete
               size="small"
               options={distinctselect_product}
@@ -525,7 +525,7 @@ export default function DailyReportByLot() {
         </Grid>
         {/* #################################################### Table Data ##################################################################*/}
         <Grid item xs={10} sm={10} md={10} lg={10} xl={10}>
-          <Item>
+          <Item sx={{ borderRadius: 3 }}>
             <Box sx={{ height: 800, width: "100%" }}>
               <DataGrid
                 rows={DataTableAPI}
